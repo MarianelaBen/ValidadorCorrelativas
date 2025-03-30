@@ -14,6 +14,7 @@ public class Inscripcion {
         this.alumno = alumno;
         this.materiasACursar = new LinkedHashSet<>();
         this.fueAprobada = false;
+        this.fechaDeEvaluacion = null;
     }
 
     public Set<Materia> getMateriasACursar() {
@@ -23,9 +24,11 @@ public class Inscripcion {
     public boolean aprobada(){
         for (Materia materia : materiasACursar) {
             if(!materia.cumpleCorrelativas(alumno.getMateriasAprobadas())){
-                return fueAprobada;
+                return false;
             }
         }
+        fueAprobada = true;
+        fechaDeEvaluacion = LocalDateTime.now();
         return true;
     }
 }
