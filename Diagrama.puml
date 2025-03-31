@@ -5,6 +5,8 @@ class Inscripcion{
     - fueAprobada: boolean
 
     +aprobada(): boolean
+    +getMateriasACursar(): Set<Materia> materias
+
 }
 
 class Alumno{
