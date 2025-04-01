@@ -18,14 +18,11 @@ class InscripcionTest {
         Materia pdp = new Materia("Paradigmas de Programacion");
         Materia ads = new Materia("Análisis de Sistemas de Información");
 
-        ddsi.getCorrelativas().add(pdp);
-        ddsi.getCorrelativas().add(ads);
-
+        ddsi.agregarCorrelativas(pdp, ads);
 
         alumno.agregarMateriasAprobadas(pdp,ads);
 
-
-        inscripcion.getMateriasACursar().add(ddsi);
+        inscripcion.agregarMateriasACursar(ddsi);
 
         Assertions.assertTrue(inscripcion.aprobada());
     }
@@ -43,11 +40,9 @@ class InscripcionTest {
 
         alumno.agregarMateriasAprobadas(am1, aga);
 
-        aN.getCorrelativas().add(am1);
-        aN.getCorrelativas().add(aga);
-        aN.getCorrelativas().add(am2);
+        aN.agregarCorrelativas(am1, aga, am2);
 
-        inscripcion.getMateriasACursar().add(aN);
+        inscripcion.agregarMateriasACursar(aN);
 
         Assertions.assertFalse(inscripcion.aprobada());
 

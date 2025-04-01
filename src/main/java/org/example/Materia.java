@@ -3,6 +3,7 @@ package org.example;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,13 +20,15 @@ public class Materia {
         this.correlativas = correlativas;
     }
 
+    public void agregarCorrelativas(Materia ... materia){
+        Collections.addAll(this.correlativas, materia);
+    }
+
     public Set<Materia> getCorrelativas() {
         return correlativas;
     }
 
     public boolean cumpleCorrelativas(Set<Materia> materiasAprobadas){
-
         return materiasAprobadas.containsAll(this.correlativas);
-
     }
 }

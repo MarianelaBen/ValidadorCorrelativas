@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -21,14 +22,20 @@ public class Inscripcion {
         return materiasACursar;
     }
 
+    public void agregarMateriasACursar(Materia ... materias){
+        Collections.addAll(this.materiasACursar, materias);
+    }
+
     public boolean aprobada(){
-        for (Materia materia : materiasACursar) {
-            if(!materia.cumpleCorrelativas(alumno.getMateriasAprobadas())){
-                return false;
-            }
+        if(this.materiasACursar
+                .stream()
+                .allMatch(m -> m.cumpleCorrelativas(this.alumno.getMateriasAprobadas()))){
+            fueAprobada = true;
+            fechaDeEvaluacion = LocalDateTime.now();
+            return true;
         }
-        fueAprobada = true;
-        fechaDeEvaluacion = LocalDateTime.now();
-        return true;
+
+        return false;
+
     }
 }

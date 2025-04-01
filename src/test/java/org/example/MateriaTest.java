@@ -17,8 +17,7 @@ class MateriaTest {
     @DisplayName("Devuelve verdadero si el alumno tiene aprobadas las correlativas de la materia.")
     public void ElAlumnoTieneAprobadasTodasLasCorrelativasALaMateria(){
 
-        ddsi.getCorrelativas().add(pdp);
-        ddsi.getCorrelativas().add(ads);
+        ddsi.agregarCorrelativas(pdp, ads);
 
         alumno.agregarMateriasAprobadas(pdp, ads);
 
@@ -28,8 +27,7 @@ class MateriaTest {
     @Test
     @DisplayName("Devuelve falso si al alumno le faltan aprobar las correlativas de la materia.")
     public void ElAlumnoNoTieneAprobadasTodasLasCorrelativasALaMateria(){
-        ddsi.getCorrelativas().add(pdp);
-        ddsi.getCorrelativas().add(ads);
+        ddsi.agregarCorrelativas(pdp, ads);
 
         alumno.agregarMateriasAprobadas(ads);
 
