@@ -14,7 +14,7 @@ class Alumno{
     - apellido: String
     - materiasAprobadas: Set<Materia>
 
-    + agregarMateriaAprobada(Materia materia): void
+    + agregarMateriasAprobadas(Materia ... materia): void
     + getMateriasAprobadas(): Set<Materia> materias
 
 }
