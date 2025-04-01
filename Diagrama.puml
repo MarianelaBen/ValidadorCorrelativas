@@ -5,6 +5,7 @@ class Inscripcion{
     - fueAprobada: boolean
 
     +aprobada(): boolean
+    +agregarMateriasACursar(Materia ... materia): void
     +getMateriasACursar(): Set<Materia> materias
 
 }
@@ -24,6 +25,7 @@ class Materia{
     - correlativas: Set<Materia>
 
     + cumpleCorrelativas(Set<Materia> materias): boolean
+    + agregarCorrelativas(Materia ... materia): void
     + getCorrelativas(): Set<Materia> materias
 }
 
