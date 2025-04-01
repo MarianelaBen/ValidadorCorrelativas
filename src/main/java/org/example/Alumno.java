@@ -3,6 +3,7 @@ package org.example;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,7 +23,7 @@ public class Alumno {
         return materiasAprobadas;
     }
 
-    public void agregarMateriaAprobada(Materia materia){
-        materiasAprobadas.add(materia);
+    public void agregarMateriasAprobadas(Materia ... materias){
+        Collections.addAll(this.materiasAprobadas, materias);
     }
 }

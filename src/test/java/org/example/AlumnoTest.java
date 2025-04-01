@@ -14,7 +14,7 @@ class AlumnoTest {
         Alumno alumno = new Alumno("Marianela", "Benitez");
         Materia ddsi = new Materia("Diseño de Sistemas de Informacion");
 
-        alumno.agregarMateriaAprobada(ddsi);
+        alumno.agregarMateriasAprobadas(ddsi);
 
         Assertions.assertTrue(alumno.getMateriasAprobadas().contains(ddsi));
     }

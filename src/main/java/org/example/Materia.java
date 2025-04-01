@@ -24,6 +24,7 @@ public class Materia {
     }
 
     public boolean cumpleCorrelativas(Set<Materia> materiasAprobadas){
+
         for(Materia correlativa: correlativas){
             if(!materiasAprobadas.contains(correlativa)){
                 return false;

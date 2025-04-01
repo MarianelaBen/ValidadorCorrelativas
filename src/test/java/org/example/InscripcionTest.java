@@ -22,8 +22,7 @@ class InscripcionTest {
         ddsi.getCorrelativas().add(ads);
 
 
-        alumno.agregarMateriaAprobada(pdp);
-        alumno.agregarMateriaAprobada(ads);
+        alumno.agregarMateriasAprobadas(pdp,ads);
 
 
         inscripcion.getMateriasACursar().add(ddsi);
@@ -42,9 +41,7 @@ class InscripcionTest {
         Materia am2 = new Materia("Analisis Matematico 2");
 
 
-        alumno.agregarMateriaAprobada(am1);
-        alumno.agregarMateriaAprobada(aga);
-
+        alumno.agregarMateriasAprobadas(am1, aga);
 
         aN.getCorrelativas().add(am1);
         aN.getCorrelativas().add(aga);

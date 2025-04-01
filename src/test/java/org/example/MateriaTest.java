@@ -20,8 +20,7 @@ class MateriaTest {
         ddsi.getCorrelativas().add(pdp);
         ddsi.getCorrelativas().add(ads);
 
-        alumno.agregarMateriaAprobada(pdp);
-        alumno.agregarMateriaAprobada(ads);
+        alumno.agregarMateriasAprobadas(pdp, ads);
 
         Assertions.assertTrue(ddsi.cumpleCorrelativas(alumno.getMateriasAprobadas()));
 
@@ -32,7 +31,7 @@ class MateriaTest {
         ddsi.getCorrelativas().add(pdp);
         ddsi.getCorrelativas().add(ads);
 
-        alumno.agregarMateriaAprobada(ads);
+        alumno.agregarMateriasAprobadas(ads);
 
         Assertions.assertFalse(ddsi.cumpleCorrelativas(alumno.getMateriasAprobadas()));
 
